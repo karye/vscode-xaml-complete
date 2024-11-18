@@ -328,6 +328,11 @@
         <xs:documentation>Gets or sets the geometry used to define the outline of the contents of an element. This is a dependency property.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
+    <xs:attribute name="Click" type="text">
+      <xs:annotation>
+        <xs:documentation>Occurs when a "T:System.Windows.Controls.Primitives.ButtonBase" is clicked.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <xs:attribute name="SnapsToDevicePixels" type="text">
       <xs:annotation>
         <xs:documentation>Gets or sets a value that determines whether rendering for this element should use device-specific pixel settings during rendering. This is a dependency property.</xs:documentation>
