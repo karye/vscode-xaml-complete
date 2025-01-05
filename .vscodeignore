@@ -9,3 +9,4 @@ xml-complete.code-workspace
 **/tslint.json
 **/*.map
 **/*.ts
+node_modules/**
