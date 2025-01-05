@@ -1,15 +1,15 @@
 {
-    "name": "vscode-xaml-complete",
-    "displayName": "Xaml Complete",
+    "name": "xaml-completion",
+    "displayName": "Xaml Completion",
     "publisher": "karye",
-    "description": "XAML editing helper (using XSD schemaLocation)",
+    "description": "XAML editing helper",
     "version": "0.1.0",
     "license": "MIT",
     "engines": {
         "vscode": "^1.40.0",
         "node": "^12.18.3"
     },
-    "icon": "images/xml-complete-icon.png",
+    "icon": "images/xml.png",
     "categories": [
         "Programming Languages",
         "Linters"
@@ -61,10 +61,10 @@
             }
         ],
         "configuration": {
-            "title": "XamlComplete",
+            "title": "XamlCompletion",
             "type": "object",
             "properties": {
-                "xmlComplete.formattingStyle": {
+                "xamlCompletion.formattingStyle": {
                     "description": "Defines if attributes should be single line or not.",
                     "type": "string",
                     "enum": [
@@ -75,7 +75,7 @@
                     "scope": "resource",
                     "default": []
                 },
-                "xmlComplete.schemaMapping": {
+                "xamlCompletion.schemaMapping": {
                     "description": "Maps xmlns to xsd location Uri.",
                     "type": "array",
                     "scope": "resource",

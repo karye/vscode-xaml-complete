@@ -1,4 +1,4 @@
-# XAM Complete
+# XAM Completion
 
 This extension helps with editing XAML files by providing a few features:
 
