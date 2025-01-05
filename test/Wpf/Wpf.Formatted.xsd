@@ -1428,11 +1428,6 @@
               <xs:documentation>Gets a value that indicates whether a "T:System.Windows.Controls.Button" is the button that is activated when a user presses ENTER.</xs:documentation>
             </xs:annotation>
           </xs:attribute>
-          <xs:attribute name="Click" type="text">
-            <xs:annotation>
-              <xs:documentation>Occurs when a "T:System.Windows.Controls.Button" is clicked.</xs:documentation>
-            </xs:annotation>
-          </xs:attribute>
           <xs:attribute name="IsPressed" type="text" />
           <xs:attribute name="Command" type="text" />
           <xs:attribute name="CommandParameter" type="text" />

@@ -48,9 +48,6 @@
         "format",
         "msbuild"
     ],
-    "activationEvents": [
-        "onLanguage:xaml"
-    ],
     "main": "./out/extension.js",
     "contributes": {
         "languages": [
