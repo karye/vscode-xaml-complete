@@ -9,4 +9,4 @@ This extension helps with editing XAML files by providing a few features:
 
 ## History
 
-This extension is based on the [XML Complete] by [Michal Rogalinski]. The original extension was created for XML files, but it also works for XAML files. This extension is a fork of the original extension with a few modifications to better support XAML files.
+This extension is based on the **XML Complete** by **Michal Rogalinski**. The original extension was created for XML files, but it also works for XAML files. This extension is a fork of the original extension with a few modifications to better support XAML files.

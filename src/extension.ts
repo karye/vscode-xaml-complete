@@ -22,6 +22,12 @@ export function activate(context: vscode.ExtensionContext): void {
     vscode.workspace.onDidChangeConfiguration(loadConfiguration, undefined, context.subscriptions);
     loadConfiguration();
 
+    // Status bar show extension is active
+    const statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left);
+    statusBarItem.text = 'XAML Completion';
+    statusBarItem.tooltip = 'XAML Completion';
+    statusBarItem.show();
+
     const schemaPropertiesArray = new XmlSchemaPropertiesArray();
     const completionitemprovider = vscode.languages.registerCompletionItemProvider(
         { language: languageId, scheme: 'file' },
