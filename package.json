@@ -1,14 +1,9 @@
 {
-    "name": "vscode-xml-complete",
-    "displayName": "Xml Complete",
-    "publisher": "rogalmic",
-    "description": "XML editing helper (using XSD schemaLocation)",
-    "author": {
-        "name": "Michal Rogalinski",
-        "email": "rogalinsky@gmail.com"
-    },
-    "version": "0.3.0",
-    "preview": true,
+    "name": "vscode-xaml-complete",
+    "displayName": "Xaml Complete",
+    "publisher": "karye",
+    "description": "XAML editing helper (using XSD schemaLocation)",
+    "version": "0.1.0",
     "license": "MIT",
     "engines": {
         "vscode": "^1.40.0",
@@ -21,7 +16,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/rogalmic/vscode-xml-complete.git"
+        "url": "https://github.com/karye/vscode-xaml-complete.git"
     },
     "bugs": {
         "url": "https://github.com/rogalmic/vscode-xml-complete/issues"
@@ -46,7 +41,6 @@
     "keywords": [
         "xml",
         "xaml",
-        "avalonia",
         "wpf",
         "xsd",
         "completion",
@@ -56,18 +50,18 @@
         "msbuild"
     ],
     "activationEvents": [
-        "onLanguage:xml"
+        "onLanguage:xaml"
     ],
     "main": "./out/extension.js",
     "contributes": {
         "languages": [
             {
-                "id": "xml",
+                "id": "xaml",
                 "configuration": "./src/language-configuration.json"
             }
         ],
         "configuration": {
-            "title": "XmlComplete",
+            "title": "XamlComplete",
             "type": "object",
             "properties": {
                 "xmlComplete.formattingStyle": {
@@ -89,10 +83,6 @@
                         {
                             "xmlns": "http://www.w3.org/2001/XMLSchema",
                             "xsdUri": "https://www.w3.org/2001/XMLSchema.xsd"
-                        },
-                        {
-                            "xmlns": "https://github.com/avaloniaui",
-                            "xsdUri": "https://raw.githubusercontent.com/rogalmic/vscode-xml-complete/master/test/Avalonia/AvaloniaXamlSchema.xsd"
                         },
                         {
                             "xmlns": "http://schemas.microsoft.com/winfx/2006/xaml/presentation",
