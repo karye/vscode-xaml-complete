@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { XmlCompleteSettings, XmlSchemaPropertiesArray } from './types';
+import { XamlCompletionSettings, XmlSchemaPropertiesArray } from './types';
 import XmlLinterProvider from './linterprovider';
 import XmlCompletionItemProvider from './completionitemprovider';
 import XmlFormatProvider from './formatprovider';
@@ -9,15 +9,15 @@ import XmlHoverProvider from './hoverprovider';
 import XmlDefinitionProvider from './definitionprovider';
 import XmlDefinitionContentProvider from './definitioncontentprovider';
 
-export declare let globalSettings: XmlCompleteSettings;
+export declare let globalSettings: XamlCompletionSettings;
 
-export const languageId = 'xml';
+export const languageId = 'xaml';
 
 export const schemaId = 'xml2xsd-definition-provider';
 
 export function activate(context: vscode.ExtensionContext): void {
 
-    console.debug(`Activate XmlComplete`);
+    console.debug(`Activate XAMLCompletion`);
 
     vscode.workspace.onDidChangeConfiguration(loadConfiguration, undefined, context.subscriptions);
     loadConfiguration();
@@ -64,16 +64,23 @@ export function activate(context: vscode.ExtensionContext): void {
         linterprovider,
         autocompletionprovider,
         definitioncontentprovider);
+
+    vscode.workspace.onDidOpenTextDocument((document) => {
+        if (document.languageId === languageId) {
+            console.log(`XAMLCompletion activated for ${document.uri.fsPath}`);
+            statusBarItem.text = `XAML Completion: ${document.uri.fsPath}`;
+        }
+    });
 }
 
 function loadConfiguration(): void {
-    const section = vscode.workspace.getConfiguration('xmlComplete', null);
-    globalSettings = new XmlCompleteSettings();
+    const section = vscode.workspace.getConfiguration('XamlCompletion', null);
+    globalSettings = new XamlCompletionSettings();
     globalSettings.xsdCachePattern = section.get('xsdCachePattern', undefined);
     globalSettings.schemaMapping = section.get('schemaMapping', []);
     globalSettings.formattingStyle = section.get('formattingStyle', "singleLineAttributes");
 }
 
 export function deactivate(): void {
-    console.debug(`Deactivate XmlComplete`);
+    console.debug(`Deactivate XamlCompletion`);
 }
