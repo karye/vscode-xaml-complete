@@ -13,7 +13,6 @@
             "args": [
                 "--extensionDevelopmentPath=${workspaceFolder}",
                 "${workspaceFolder}/test/Wpf6/Wpf6.csproj",
-                "${workspaceFolder}/test/Avalonia/AvaloniaXamlSchema.Formatted.xsd",
                 "${workspaceFolder}/test/Wpf/Wpf.Formatted.xsd",
                 "${workspaceFolder}/test/Avalonia/AvaloniaXsd.csproj",
                 "${workspaceFolder}/test/Wpf/Wpf.csproj",
