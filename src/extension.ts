@@ -15,7 +15,7 @@ export const schemaId = 'xml2xsd-definition-provider';
 
 export function activate(context: vscode.ExtensionContext): void {
 
-    console.debug(`Activate XmlComplete`);
+    console.debug(`Activate XAMLCompletion`);
 
     vscode.workspace.onDidChangeConfiguration(loadConfiguration, undefined, context.subscriptions);
     loadConfiguration();
