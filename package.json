@@ -3,7 +3,7 @@
     "displayName": "XAML Completion",
     "publisher": "karye",
     "description": "XAML editing helper",
-    "version": "0.4.0",
+    "version": "0.4.1",
     "preview": true,
     "license": "MIT",
     "engines": {
@@ -47,7 +47,9 @@
             },
             {
                 "id": "xaml",
-                "extensions": [".xaml"],
+                "extensions": [
+                    ".xaml"
+                ],
                 "configuration": "./src/language-configuration.json"
             }
         ],
