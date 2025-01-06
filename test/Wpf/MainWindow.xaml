@@ -15,4 +15,7 @@
                FontSize="40"/>
         <Button Content="Exit" Grid.Row="1" FontSize="20" />
     </Grid>
+    <StackPanel>
+        <Button Clip></Button>
+    </StackPanel>
 </Window>

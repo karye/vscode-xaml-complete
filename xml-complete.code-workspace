@@ -1,16 +1,7 @@
 {
     "folders": [
         {
-            "path": "."
-        },
-        {
-            "path": "test/Avalonia"
-        },
-        {
             "path": "test/Wpf"
-        },
-        {
-            "path": "test/Wpf6"
         }
     ],
     "settings": {

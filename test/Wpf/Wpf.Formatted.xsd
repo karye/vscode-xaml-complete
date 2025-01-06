@@ -330,7 +330,7 @@
     </xs:attribute>
     <xs:attribute name="Click" type="text">
       <xs:annotation>
-        <xs:documentation>Occurs when a "T:System.Windows.Controls.Primitives.ButtonBase" is clicked.</xs:documentation>
+        <xs:documentation>Occurs when a button is clicked.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="SnapsToDevicePixels" type="text">
@@ -1429,6 +1429,8 @@
             </xs:annotation>
           </xs:attribute>
           <xs:attribute name="IsPressed" type="text" />
+          <xs:attribute name="Click" type="text" />
+          <xs:attribute name="Command" type="text" />
           <xs:attribute name="Command" type="text" />
           <xs:attribute name="CommandParameter" type="text" />
           <xs:attribute name="CommandTarget" type="text" />

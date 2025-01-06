@@ -1,48 +1,27 @@
 {
-    "name": "vscode-xml-complete",
-    "displayName": "Xml Complete",
-    "publisher": "rogalmic",
-    "description": "XML editing helper (using XSD schemaLocation)",
-    "author": {
-        "name": "Michal Rogalinski",
-        "email": "rogalinsky@gmail.com"
-    },
-    "version": "0.3.0",
+    "name": "xaml-completion",
+    "displayName": "XAML Completion",
+    "publisher": "karye",
+    "description": "XAML editing helper",
+    "version": "0.4.0",
     "preview": true,
     "license": "MIT",
     "engines": {
-        "vscode": "^1.40.0",
+        "vscode": "^1.42.0",
         "node": "^12.18.3"
     },
-    "icon": "images/xml-complete-icon.png",
+    "icon": "images/xml.png",
     "categories": [
         "Programming Languages",
         "Linters"
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/rogalmic/vscode-xml-complete.git"
+        "url": "https://github.com/karye/xaml-completion.git"
     },
     "bugs": {
-        "url": "https://github.com/rogalmic/vscode-xml-complete/issues"
+        "url": "https://github.com/karye/xaml-completion/issues"
     },
-    "badges": [
-        {
-            "url": "https://img.shields.io/github/downloads/rogalmic/vscode-xml-complete/latest/total.svg",
-            "href": "https://github.com/rogalmic/vscode-xml-complete/releases/latest",
-            "description": "Download latest beta release (master branch)"
-        },
-        {
-            "url": "https://img.shields.io/github/stars/rogalmic/vscode-xml-complete.svg?style=social&label=Stars",
-            "href": "https://github.com/rogalmic/vscode-xml-complete/stargazers",
-            "description": "Star the project in github"
-        },
-        {
-            "url": "https://img.shields.io/badge/paypal-donate-blue.svg",
-            "href": "https://paypal.me/rogalmic",
-            "description": "Donate some $ to keep project going"
-        }
-    ],
     "keywords": [
         "xml",
         "xaml",
@@ -56,13 +35,19 @@
         "msbuild"
     ],
     "activationEvents": [
-        "onLanguage:xml"
+        "onLanguage:xml",
+        "onLanguage:xaml"
     ],
     "main": "./out/extension.js",
     "contributes": {
         "languages": [
             {
                 "id": "xml",
+                "configuration": "./src/language-configuration.json"
+            },
+            {
+                "id": "xaml",
+                "extensions": [".xaml"],
                 "configuration": "./src/language-configuration.json"
             }
         ],

@@ -10,9 +10,7 @@ import XmlDefinitionProvider from './definitionprovider';
 import XmlDefinitionContentProvider from './definitioncontentprovider';
 
 export declare let globalSettings: XmlCompleteSettings;
-
 export const languageId = 'xml';
-
 export const schemaId = 'xml2xsd-definition-provider';
 
 export function activate(context: vscode.ExtensionContext): void {
@@ -58,6 +56,11 @@ export function activate(context: vscode.ExtensionContext): void {
         linterprovider,
         autocompletionprovider,
         definitioncontentprovider);
+
+    vscode.workspace.onDidOpenTextDocument((document) => {
+        console.debug(`File opened: ${document.fileName}`);
+        console.debug(`File type: ${document.languageId}`);
+    });
 }
 
 function loadConfiguration(): void {

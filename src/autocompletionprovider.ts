@@ -67,7 +67,7 @@ export default class AutoCompletionProvider implements vscode.Disposable {
         const scope = await XmlSimpleParser.getScopeForPosition(`${wholeLineText}\n`, linePosition);
 
         if (--linePosition < 0) {
-            // NOTE: automatic acions require info about previous char
+            // NOTE: automatic actions require info about previous char
             return;
         }
 
@@ -86,23 +86,18 @@ export default class AutoCompletionProvider implements vscode.Disposable {
 
         // NOTE: auto-change is available only for single tag enclosed in one line
         const closeCurrentTagIndex = after.indexOf(">");
-        const nextTagStartPostion = after.indexOf("<");
-        const nextTagEndingPostion = nextTagStartPostion >= 0 ? after.indexOf(">", nextTagStartPostion) : -1;
-        const invalidTagStartPostion = nextTagEndingPostion >= 0 ? after.indexOf("<", nextTagEndingPostion) : -1;
+        const nextTagStartPosition = after.indexOf("<");
+        const nextTagEndingPosition = nextTagStartPosition >= 0 ? after.indexOf(">", nextTagStartPosition) : -1;
+        const invalidTagStartPosition = nextTagEndingPosition >= 0 ? after.indexOf("<", nextTagEndingPosition) : -1;
 
         let resultText = "";
 
         if (after.substr(closeCurrentTagIndex - 1).startsWith(`/></${scope.tagName}>`) && closeCurrentTagIndex === 1) {
-
-            resultText = wholeLineText.substring(0, linePosition + nextTagStartPostion) + `` + wholeLineText.substring(linePosition + nextTagEndingPostion + 1);
-
-        } else if (after.substr(closeCurrentTagIndex - 1, 2) !== "/>" && invalidTagStartPostion < 0) {
-
-            if (nextTagStartPostion >= 0 && after[nextTagStartPostion + 1] === "/") {
-
-                resultText = wholeLineText.substring(0, linePosition + nextTagStartPostion) + `</${scope.tagName}>` + wholeLineText.substring(linePosition + nextTagEndingPostion + 1);
-            }
-            else if (nextTagStartPostion < 0) {
+            resultText = wholeLineText.substring(0, linePosition + nextTagStartPosition) + `` + wholeLineText.substring(linePosition + nextTagEndingPosition + 1);
+        } else if (after.substr(closeCurrentTagIndex - 1, 2) !== "/>" && invalidTagStartPosition < 0) {
+            if (nextTagStartPosition >= 0 && after[nextTagStartPosition + 1] === "/") {
+                resultText = wholeLineText.substring(0, linePosition + nextTagStartPosition) + `</${scope.tagName}>` + wholeLineText.substring(linePosition + nextTagEndingPosition + 1);
+            } else if (nextTagStartPosition < 0) {
                 resultText = wholeLineText.substring(0, linePosition + closeCurrentTagIndex + 1) + `</${scope.tagName}>` + wholeLineText.substring(linePosition + closeCurrentTagIndex + 1);
             }
         }
@@ -136,5 +131,8 @@ export default class AutoCompletionProvider implements vscode.Disposable {
                     wholeLineRange.end),
                 resultText);
         }, { undoStopAfter: false, undoStopBefore: false });
+
+        // Log the resultText to verify the auto-completion logic
+        console.debug(`Auto-completed text: ${resultText}`);
     }
 }
