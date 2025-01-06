@@ -1429,8 +1429,6 @@
             </xs:annotation>
           </xs:attribute>
           <xs:attribute name="IsPressed" type="text" />
-          <xs:attribute name="Click" type="text" />
-          <xs:attribute name="Command" type="text" />
           <xs:attribute name="Command" type="text" />
           <xs:attribute name="CommandParameter" type="text" />
           <xs:attribute name="CommandTarget" type="text" />

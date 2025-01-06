@@ -7,8 +7,8 @@
     "preview": true,
     "license": "MIT",
     "engines": {
-        "vscode": "^1.42.0",
-        "node": "^12.18.3"
+        "vscode": "^1.75.0",
+        "node": "^20.0.0"
     },
     "icon": "images/xml.png",
     "categories": [
@@ -33,10 +33,6 @@
         "lint",
         "format",
         "msbuild"
-    ],
-    "activationEvents": [
-        "onLanguage:xml",
-        "onLanguage:xaml"
     ],
     "main": "./out/extension.js",
     "contributes": {

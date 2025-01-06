@@ -1,5 +1,10 @@
 # XAML Completion
+This extension helps with editing XAML files by providing a few features:
 
-This extension provides XAML intellisense for Visual Studio Code.
+* Auto-completion: Automatically completes XAML tags and attributes.
+* Hover information: Shows information about the hovered XAML element.
+* Signature help: Shows information about the parameters of a XAML element.
+* Formatting: Formats XAML content.
 
-Forked from rogalmic/vscode-xml-complete
+## History
+This extension forked from [https://github.com/rogalmic/vscode-xml-complete](rogalmic/vscode-xml-complete) by **Michal Rogalinski**. The original extension was created for XML files, but it also works for XAML files. This extension is a fork of the original extension with a few modifications to better support XAML files.
